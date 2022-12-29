@@ -39,10 +39,12 @@ html {
 .team .member {
     position: absolute;
     top: 10%;
+    left: 0;
     text-align: center;
     width: 100%;
     text-transform: uppercase;
     letter-spacing: 2px;
+    animation: text 4s linear infinite;
 }
 
 .team h1 {
@@ -51,6 +53,35 @@ html {
 
 .team h2 {
     font-size: 2.2rem;
+}
+
+@media (orientation: landscape) {
+    .team img.color {
+        right: 3%;
+        height: 56%;
+    }
+    
+    .team img.gray {
+        bottom: -10%;
+        left: -15%;
+        height: 130%;
+    }
+    
+    .team .member {
+        width: 60%;
+        left: auto;
+        right: 0;
+    }
+}
+
+@media (min-width: 1025px) {
+    .team h1 {
+        font-size: 8rem;
+    }
+    
+    .team h2 {
+        font-size: 5rem;
+    }
 }
 
 @keyframes color {
@@ -95,6 +126,29 @@ html {
     }
     100% {
         transform: translateX(5%) scale(1.1);
+        opacity: 0;
+    }
+}
+
+@keyframes text {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    8% {
+        opacity: 0;
+    }
+    13% {
+        opacity: 1;
+    }
+    87% {
+        opacity: 1;
+    }
+    92% {
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1.1);
         opacity: 0;
     }
 }
