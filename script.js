@@ -1,5 +1,6 @@
 // Parametry
 let activeElement = 0;
+const timeChange = 4000;
 
 // Pobieramy 4 elementy, na których pracujemy
 const colorImgHtml = document.querySelector('.color');
@@ -14,11 +15,16 @@ const names = ['Zofia Paluch', 'Zdzisław Dyrma', 'Ryszard Ochódzki', ];
 const profession = ['Programista JS', 'UX i UI designer', 'Frontend developer'];
 
 function changeElement() {
+    console.log("automatyczne wywołanie");
     activeElement++;
+    if (activeElement == colorImages.length) {
+        activeElement = 0;
+    }
     colorImgHtml.src = colorImages[activeElement];
     grayImgHtml.src = grayImages[activeElement];
     h1Html.textContent = names[activeElement];
     h2Html.textContent = profession[activeElement];
 }
 
-if activeElement ==2
+setInterval(changeElement, timeChange);
+
